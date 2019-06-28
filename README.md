@@ -22,7 +22,7 @@ The platform can rotate with three different programs, varying speed and total t
 - 6V DC motor with gear reduction
 
 #### Coding:
-The coding was done on Python for Linux (https://github.com/python) and (Adafruit-BeagleBone-IO-Python https://github.com/adafruit/adafruit-beaglebone-io-python)
+The coding was done on Python for Linux (https://github.com/python) and Adafruit-BeagleBone-IO-Python (https://github.com/adafruit/adafruit-beaglebone-io-python)
 
 #### Videos:
 
