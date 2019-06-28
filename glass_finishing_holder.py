@@ -13,7 +13,7 @@ BUTTON2 = "P9_27"
 pwm_motor = "P9_16"
 ###
 
-#Assigning GPIOs type
+#Assigning GPIOs type as  INPUT or OUTPUT
 GPIO.setup(motor_p,GPIO.OUT)
 GPIO.setup(motor_n,GPIO.OUT)
 GPIO.output(motor_p, GPIO.LOW)
@@ -28,13 +28,13 @@ GPIO.setup(led3,GPIO.OUT)
 ###
 
 
-
-while True:
+### Loop for program
+while True: 
     
     ### PWM initial parameters for 30 RPM motor base speed
     PWM.start(pwm_motor,35,100)
 
-	### LEDs initial setup for state 1 as default
+    ### LEDs initial setup for state 1 as default
     GPIO.output(led1, GPIO.HIGH)
     GPIO.output(led2, GPIO.LOW)
     GPIO.output(led3, GPIO.LOW)
@@ -72,7 +72,7 @@ while True:
         
     loop = 1
     
-	### Running the programs
+    ### Running the programs
     while loop == 1:
         if state == 1:
             print('programa 1')
@@ -84,7 +84,7 @@ while True:
             GPIO.output(motor_p, GPIO.HIGH)
             GPIO.output(motor_n, GPIO.LOW)
 			
-			### Program running time of 240 seconds on lower speed
+	    ### Program running time of 240 seconds on lower speed
             for inc in range(0,240*2):
                 Button2_State = GPIO.input (BUTTON2)
                 if Button2_State == 1:
@@ -101,7 +101,7 @@ while True:
             print('programa 2')
             time.sleep(2)
             
-             ###PWM  parameters for 45 RPM motor base speed
+            ###PWM  parameters for 45 RPM motor base speed
             PWM.start(pwm_motor,50,100)
             
             GPIO.output(motor_p, GPIO.HIGH)
@@ -130,7 +130,7 @@ while True:
             GPIO.output(motor_p, GPIO.HIGH)
             GPIO.output(motor_n, GPIO.LOW)
     
-			### Program running time of 240 seconds on higher speed
+	    ### Program running time of 240 seconds on higher speed
             for inc in range(0,240*2):
                 Button2_State = GPIO.input (BUTTON2)
                 if Button2_State == 1:
@@ -148,6 +148,6 @@ while True:
         GPIO.output(motor_p, GPIO.LOW)
         GPIO.output(motor_n, GPIO.LOW)
         loop = 0
-		### END
+	### END
     
     
