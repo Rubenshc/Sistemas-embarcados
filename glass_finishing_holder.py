@@ -65,7 +65,7 @@ while True:
         
 		Button2_State = GPIO.input (BUTTON2)
         ###  Confirming the program/state selection
-		if Button2_State == 1:
+	if Button2_State == 1:
             print('selecao confirmada')
             time.sleep(0.5)
             loop = 0
